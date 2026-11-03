@@ -1,7 +1,13 @@
-# SaySo | Campus Complaint Management System
+![SaySo Campus Pixel Art](./assets/sayso-campus.png)
+
+<h1 align="center">SaySo | Campus Complaint Management System</h1>
 
 <p align="center">
-  <strong>A centralized platform for reporting, managing, tracking, and resolving campus complaints.</strong>
+  <strong>Your voice. Your campus. Your SaySo.</strong>
+</p>
+
+<p align="center">
+  A centralized platform for reporting, managing, tracking, and resolving campus complaints.
 </p>
 
 <p align="center">
@@ -67,15 +73,9 @@ SaySo follows a centralized backend architecture.
                       Drizzle ORM
 ```
 
-The backend handles authentication, authorization, business logic, complaint management, database operations, and caching.
-
 ## 4. User Roles and Responsibilities
 
 ### 4.1 Student Portal
-
-The Student Portal allows students to report campus-related problems and monitor their resolution.
-
-**Core responsibilities:**
 
 - Register and authenticate.
 - Create new complaints.
@@ -89,10 +89,6 @@ The Student Portal allows students to report campus-related problems and monitor
 
 ### 4.2 Staff Portal
 
-The Staff Portal is designed for university staff responsible for handling complaints.
-
-**Core responsibilities:**
-
 - Authenticate as staff.
 - View complaints assigned to them.
 - Access complaint details.
@@ -103,10 +99,6 @@ The Staff Portal is designed for university staff responsible for handling compl
 - Mark complaints as resolved when appropriate.
 
 ### 4.3 Admin Portal
-
-The Admin Portal provides centralized management and monitoring capabilities.
-
-**Core responsibilities:**
 
 - Manage student and staff accounts.
 - Manage departments.
@@ -145,7 +137,7 @@ Access to protected resources is controlled through authentication and role-base
 
 ## 6. Backend Architecture
 
-The backend follows a modular, layered architecture to maintain separation of concerns.
+The backend follows a modular, layered architecture.
 
 ```text
 Client Request
@@ -210,10 +202,6 @@ JSON Response
 
 SaySo uses MySQL as its primary relational database.
 
-The database is organized into modules covering users, departments, complaints, comments, and complaint classification.
-
-Main database entities include:
-
 | Table | Responsibility |
 |---|---|
 | `students` | Student account information |
@@ -227,13 +215,9 @@ Main database entities include:
 | `complaint_tags` | Relationship between complaints and tags |
 | `staff_departments` | Staff and department relationships |
 
-The database uses relational constraints and associations to maintain data consistency.
-
 Drizzle ORM manages schema definitions, migrations, and database queries.
 
 ## 8. Complaint Lifecycle
-
-A typical complaint resolution workflow follows these stages:
 
 ```text
 Student submits complaint
@@ -266,8 +250,6 @@ The exact status transitions are governed by backend business rules.
 
 ### Prerequisites
 
-Before contributing, install:
-
 - Node.js 22 or later
 - npm
 - Docker
@@ -280,7 +262,6 @@ Before contributing, install:
 
 ```bash
 git clone https://github.com/SayySoo/sayso-server.git
-
 cd sayso-server
 ```
 
@@ -312,15 +293,8 @@ If `.env.example` is not available, consult the maintainers for the required env
 
 ### Start Development Environment
 
-Start local infrastructure using Docker Compose:
-
 ```bash
 docker compose up -d
-```
-
-Start the backend development server:
-
-```bash
 npm run dev
 ```
 
@@ -334,8 +308,6 @@ curl http://localhost:8000/health
 
 ## 10. Database and Drizzle Commands
 
-SaySo uses Drizzle ORM for database schema management and migrations.
-
 | Command | Purpose |
 |---|---|
 | `npm run db:generate` | Generate migration files |
@@ -343,7 +315,7 @@ SaySo uses Drizzle ORM for database schema management and migrations.
 | `npm run db:push` | Push schema changes to the database |
 | `npm run db:studio` | Open Drizzle Studio |
 
-**Recommended workflow for schema changes:**
+Recommended workflow for schema changes:
 
 1. Update the appropriate schema file.
 2. Generate a migration.
@@ -356,29 +328,15 @@ Avoid using schema push operations against production databases without explicit
 
 ## 11. Testing and Build
 
-Run the test suite:
-
 ```bash
 npm test
-```
-
-Compile the TypeScript application:
-
-```bash
 npm run build
-```
-
-Run the development server:
-
-```bash
 npm run dev
 ```
 
 Before submitting a contribution, make sure tests pass and the production build completes successfully.
 
 ## 12. Docker Development
-
-SaySo uses Docker Compose to simplify local infrastructure management.
 
 The current development environment includes:
 
@@ -411,7 +369,7 @@ Do not remove persistent database volumes unless you intentionally want to delet
 
 ## 13. Contribution Guidelines
 
-Contributions are welcome! Whether you're fixing a bug, improving an existing feature, or introducing new functionality, please follow these guidelines.
+Contributions are welcome!
 
 ### Step 1: Fork or Clone
 
@@ -462,8 +420,6 @@ If your changes involve database schemas, verify migrations locally as well.
 
 ### Step 5: Commit Your Changes
 
-Use descriptive commit messages.
-
 ```bash
 git add .
 git commit -m "feat: add complaint assignment functionality"
@@ -489,7 +445,6 @@ git push origin feature/your-feature-name
 Create a Pull Request targeting the `main` branch.
 
 Include:
-
 - A clear description of the changes.
 - The problem being addressed.
 - Relevant implementation details.
@@ -554,10 +509,6 @@ Pull requests run the test-and-build job. Production deployment is restricted to
 Production credentials are maintained through GitHub repository secrets and server-side environment configuration. Never commit these credentials.
 
 ## 15. Security Guidelines
-
-Security is important because SaySo manages user accounts and complaint-related information.
-
-Contributors should:
 
 - Never commit passwords, API keys, tokens, or private SSH keys.
 - Never expose production environment variables.
