@@ -1,4 +1,4 @@
-![SaySo Campus Pixel Art](./assets/sayso-campus.png)
+![SaySo Campus Pixel Art](./sayso.png)
 
 <h1 align="center">SaySo | Campus Complaint Management System</h1>
 
